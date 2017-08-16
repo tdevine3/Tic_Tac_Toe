@@ -105,14 +105,213 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <ImageView
+        android:id="@+id/o1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button1"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/button3"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="@+id/button4"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="@+id/button5"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o6"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="@+id/button6"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o7"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button8"
+        app:layout_constraintTop_toTopOf="@+id/button7"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o8"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button9"
+        app:layout_constraintTop_toTopOf="@+id/button8"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/o9"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/button9"
+        app:layout_constraintTop_toTopOf="@+id/button9"
+        app:srcCompat="@drawable/o" />
+
+    <ImageView
+        android:id="@+id/x1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button1"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintRight_toLeftOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/button3"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="@+id/button4"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="@+id/button5"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x6"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/button6"
+        app:layout_constraintTop_toTopOf="@+id/button6"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x7"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button8"
+        app:layout_constraintTop_toTopOf="@+id/button7"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x8"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toLeftOf="@+id/button9"
+        app:layout_constraintTop_toTopOf="@+id/button8"
+        app:srcCompat="@drawable/x" />
+
+    <ImageView
+        android:id="@+id/x9"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:visibility="invisible"
+        app:layout_constraintRight_toRightOf="@+id/button9"
+        app:layout_constraintTop_toTopOf="@+id/button9"
+        app:srcCompat="@drawable/x" />
+
     <TextView
         android:id="@+id/WinningMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
+        android:layout_width="171dp"
+        android:layout_height="70dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginTop="21dp"
         android:text="@string/winnero"
+        android:textSize="30sp"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
-        tools:layout_editor_absoluteX="113dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
 </android.support.constraint.ConstraintLayout>
