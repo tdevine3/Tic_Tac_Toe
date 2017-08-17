@@ -3,7 +3,7 @@ package toby.tic_tac_toe;
 import java.util.ArrayList;
 import java.util.List;
 
-class AI extends Play{
+class AI implements Markers{
 
 	static Memory Think(XO turnIn, Board boardIn) {
 

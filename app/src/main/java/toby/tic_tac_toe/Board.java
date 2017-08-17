@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Board extends Play {
+public class Board implements Markers {
 	XO[] squares;
 	
 	private int[][] winningCombinations = {
