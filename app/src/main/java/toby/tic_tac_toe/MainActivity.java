@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity implements Markers{
     XO turn = XO.X;
     Board board = new Board();
     TextView wm;
+    Button toggleButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements Markers{
 
         wm =  (TextView) findViewById(R.id.WinningMessage);
         final Button resetButton = (Button) findViewById(R.id.resetbutton);
+        toggleButton = (Button) findViewById(R.id.toggle);
 
-// put in loop
         buttons[0] = (Button)findViewById(R.id.button1); //shifted one
         buttons[1] = (Button)findViewById(R.id.button2);
         buttons[2] = (Button)findViewById(R.id.button3);
@@ -57,11 +59,14 @@ public class MainActivity extends AppCompatActivity implements Markers{
         Os[8] = (ImageView)findViewById(R.id.o9);
 
 
-
-
         resetButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Reset();
+            }
+        });
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toggle();
             }
         });
 
@@ -77,32 +82,57 @@ public class MainActivity extends AppCompatActivity implements Markers{
 
     private void move(int j){
         buttons[j].setVisibility(View.INVISIBLE);
-        Xs[j].setVisibility(View.VISIBLE);
-        board.squares[j]=XO.X;
+        if(turn==XO.X){
+            Xs[j].setVisibility(View.VISIBLE);
+        }else{
+            Os[j].setVisibility(View.VISIBLE);
+        }
+        board.squares[j]=turn;
 
         if (board.isGameOver()){
             XO w=board.winner();
-            wm.setText(w.toString()+" wins!");
+            if (w==XO.E){
+                wm.setText("Cats game!");
+                gameEnd();
+            } else {
+                wm.setText(w.toString() + " wins!");
+            }
             wm.setVisibility(View.VISIBLE);
+            gameEnd();
         }else {
 
             Memory aThought = AI.Think(turn, board);
+            turn = (( turn == XO.X ) ? XO.O : XO.X);
             int compMove = aThought.bestMove;
-            Os[compMove].setVisibility(View.VISIBLE);
+            if(turn==XO.X) {
+                Xs[compMove].setVisibility(View.VISIBLE);
+            }else{
+                Os[compMove].setVisibility(View.VISIBLE);
+            }
             buttons[compMove].setVisibility(View.INVISIBLE);
-            board.squares[compMove] = XO.O;
+            board.squares[compMove] = turn;
+            turn = (( turn == XO.X ) ? XO.O : XO.X);
 
             if (board.isGameOver()) {
                 XO w = board.winner();
-                wm.setText(w.toString() + " wins!");
+                if (w==XO.E){
+                    wm.setText("Cats game!");
+                    gameEnd();
+                } else {
+                    wm.setText(w.toString() + " wins!");
+                }
                 wm.setVisibility(View.VISIBLE);
+                gameEnd();
+            }
+
+            if (board.EmptySquares().size()==1) {
+                toggleButton.setVisibility(View.INVISIBLE);
             }
         }
     }
 
     private void Reset () {
 
-        Button[] buttons = new Button [9];
         int[] xs = {R.id.x1, R.id.x2, R.id.x3, R.id.x4, R.id.x5, R.id.x6, R.id.x7, R.id.x8, R.id.x9};
         int[] os = {R.id.o1, R.id.o2, R.id.o3, R.id.o4, R.id.o5, R.id.o6, R.id.o7, R.id.o8, R.id.o9};
         int[] bs = {R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7, R.id.button8, R.id.button9};
@@ -115,11 +145,61 @@ public class MainActivity extends AppCompatActivity implements Markers{
 
 
         XO[] resetSquares = new XO[] { XO.E, XO.E, XO.E, XO.E, XO.E, XO.E, XO.E, XO.E, XO.E };
-        this.board.squares = resetSquares.clone();
+        board.squares = resetSquares.clone();
 
         findViewById(R.id.WinningMessage).setVisibility(View.INVISIBLE);
         wm.setVisibility(View.INVISIBLE);
+        turn = XO.X;
+        toggleButton.setVisibility(View.VISIBLE);
+    }
 
+    private void gameEnd(){
+        int[] bs = {R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5, R.id.button6, R.id.button7, R.id.button8, R.id.button9};
+
+        for(Integer i:board.EmptySquares()){
+            findViewById(bs[i]).setVisibility(View.INVISIBLE);
+        }
+        turn = XO.X;
+        toggleButton.setVisibility(View.INVISIBLE);
+    }
+
+    private void Toggle(){
+        turn = ((turn == XO.X) ? XO.O : XO.X);
+        int compMove = 0;
+        if(board.EmptySquares().size()==9){
+            compMove= 2*(int)(Math.random() * 4);
+            turn = ((turn == XO.X) ? XO.O : XO.X);
+        }else {
+            turn = ((turn == XO.X) ? XO.O : XO.X);
+            Memory aThought = AI.Think(turn, board);
+            compMove = aThought.bestMove;
+        }
+
+        if (turn == XO.X) {
+            Xs[compMove].setVisibility(View.VISIBLE);
+        } else {
+            Os[compMove].setVisibility(View.VISIBLE);
+        }
+        buttons[compMove].setVisibility(View.INVISIBLE);
+        board.squares[compMove] = turn;
+
+        if (board.EmptySquares().size()==1) {
+            toggleButton.setVisibility(View.INVISIBLE);
+        }
+
+        if (board.isGameOver()) {
+            XO w = board.winner();
+            if (w == XO.E) {
+                wm.setText("Cats game!");
+
+                Reset();
+            } else {
+                wm.setText(w.toString() + " wins!");
+                gameEnd();
+            }
+            wm.setVisibility(View.VISIBLE);
+        }
+        turn = ((turn == XO.X) ? XO.O : XO.X);
     }
 
 }

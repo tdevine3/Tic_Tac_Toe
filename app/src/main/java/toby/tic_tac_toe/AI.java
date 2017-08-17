@@ -47,7 +47,7 @@ class AI implements Markers{
 	}
 
 	//getScore assumes the game is over
-	static int getScore(Board board){
+	static private int getScore(Board board){
 		int Ecount = countEmpties(board); //Favor shorter solutions. Max Ecount is 4, so +/-20 never surpassed
 		int score = 10+Ecount;
 		switch (board.winner()){

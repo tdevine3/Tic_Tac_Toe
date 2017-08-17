@@ -28,7 +28,7 @@ public class Board implements Markers {
 	
 	List<Integer> EmptySquares(){
 		List<Integer> freeSquares = new ArrayList<Integer>();
-		for(int i=1; i<squares.length; i++)
+		for(int i=0; i<squares.length; i++)
 			if(squares[i]==XO.E) freeSquares.add(i);
 		return freeSquares;
 	}
